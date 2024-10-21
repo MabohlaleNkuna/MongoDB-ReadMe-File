@@ -40,3 +40,59 @@ To interact with MongoDB, you'll need to start the MongoDB shell (Mongosh) on yo
 2. Start the MongoDB server if it's not already running by executing:
    ```bash
    mongod
+   ```
+3.Open another terminal window and start the MongoDB shell by typing:
+```
+mongosh
+```
+
+## 1. Create the Database
+```
+use Codetribe
+```
+## 2. Create the Collections
+```
+db.Facilitators.insertOne({
+  Name: "Vukona Nnisi",
+  Location: "Johannesburg",
+  Course: "Full-Stack Development"
+})
+```
+To verify the data, run the following command:
+```
+db.Facilitators.find().pretty()
+```
+### 2.2. Trainees Collection
+```
+db.Trainees.insertMany([
+  {
+    Name: "Mabohlale Nkuna",
+    Location: "Pretoria",
+    Facilitator: "John Doe"
+  },
+  {
+    Name: "Leon Nkuna",
+    Location: "Pretoria",
+    Facilitator: "John Doe"
+  }
+])
+
+db.Trainees.find().pretty()
+```
+### 2.3. Projects Collection
+```
+db.Projects.insertMany([
+  {
+    Name: "Weather App",
+    Course: "React.js",
+    Lesson: "APIs"
+  },
+  {
+    Name: "To-Do List",
+    Course: "React.js",
+    Lesson: "DOM Manipulation"
+  }
+])
+
+db.Projects.find().pretty()
+```
